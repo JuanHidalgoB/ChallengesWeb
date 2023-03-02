@@ -8,7 +8,7 @@ export const useFecth = (url) =>{
     })
 
     const getFetch = async () =>{
-        const api = await fetch(url);
+        const api = await fetch(url,{ mode: 'no-cors' });
         const data = await api.json();
 
         useState({
