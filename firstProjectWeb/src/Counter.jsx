@@ -1,26 +1,19 @@
 import { useState } from "react"
+import {useCounter} from "./hooks/useCounter"
 
 const Counter  = ({value}) => {
-    const [counter,setCounter] = useState(value)
 
-    const handleAdd = () =>{
-        setCounter(counter + 1)
-    }
-    const handleSubstract = () =>{
-        setCounter(counter - 1)
-    }
-
-    const handleReset = () =>{
-        setCounter(value)
-    }
+    const{counter,handleAdd,handleSubstract,handleReset} = useCounter(value)
 
     return(
-        <>
-        <h1>{counter}</h1> 
-        <button onClick={() => handleAdd()}>Add</button>
-        <button onClick={() => handleSubstract()}>Substract</button>
-        <button onClick={() => handleReset()}>Reset</button>
-        </>
+    <>
+    <h1>Counter</h1>
+    <button onClick={ () => handleAdd() }> +1 </button>
+    <button onClick={ () => handleSubstract() }> -1 </button>
+    <button onClick={() => handleReset()}> Reset </button>
+    <br />
+    <span> {counter} </span>
+    </>
     )
 }
 
