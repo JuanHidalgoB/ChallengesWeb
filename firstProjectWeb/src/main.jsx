@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import MyFirstApp from './MyFirstApp'
 import Counter from './Counter'
-import GifExpertApp from './ComponentApp'
+import { GifExpertApp } from './GifExpertApp'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
